@@ -3,6 +3,8 @@ permalink: /:year/:month/:title:output_ext
 plugins:
   - jekyll-paginate
 
+paginate: 5
+
 # Pagination Settings
 pagination:
   enabled: true
