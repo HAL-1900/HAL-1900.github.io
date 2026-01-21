@@ -1,0 +1,35 @@
+---
+pagination: 
+  enabled: true
+---
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div class="container">
+
+        {% include header.html %}
+
+        <div class="main-content">
+
+            <section class="posts">
+
+                {{ content }}
+
+            </section>
+
+            <aside class="sidebar">
+
+                {% include sidebar.html %}
+
+            </aside>
+        </div>
+
+        {% include footer.html %}
+
+    </div>
+</body>
+
+</html>

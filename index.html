@@ -1,75 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AISecurity.lol</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>AISecurity.lol</h1>
-            <p>AI AppSec News, Opinions, Learnings and Code</p>
-        </header>
+---
+layout: default
+pagination: 
+  enabled: true
+---
 
-        <!-- Navigation -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#archive">Archive</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Blog Posts -->
-            <section class="posts">
+                {% for post in paginator.posts %}
                 <article>
-                    <h2><a href="#post1">AISecurity.lol</a></h2>
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
                     <div class="post-meta">
-                        <span>By HAL-1900</span>
-                        <span>January 16, 2026</span>
+                        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+                        <span>
+                            {% for category in post.categories %}
+                                #{{ category }}
+                            {% endfor %}
+                        </span>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        {{ post.excerpt }}
                     </p>
-                    <a href="#post1" class="read-more">Read More →</a>
+                    <a href="{{ post.url }}" class="read-more">Read More →</a>
                 </article>
-
-            </section>
-
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="widget">
-                    <h3>Quick Links</h3>
-                    <ul>
-
-                    </ul>
-                </div>
-
-                <div class="widget">
-                    <h3>Topics</h3>
-                    <ul>
-
-                    </ul>
-                </div>
-
-                <div class="widget">
-                    <h3>Follow Me</h3>
-                    <ul>
-                        <li><a href="https://github.com/HAL-1900">GitHub</a></li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 AISecurity.lol - All rights reserved.</p>
-        </footer>
-    </div>
-</body>
-</html>
+                {% endfor %}
