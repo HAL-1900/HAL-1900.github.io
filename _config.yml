@@ -1,0 +1,10 @@
+permalink: /:year/:month/:title:output_ext
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/:num/'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
