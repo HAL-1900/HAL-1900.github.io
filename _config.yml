@@ -1,5 +1,7 @@
 permalink: /:year/:month/:title:output_ext
 
+excerpt_separator: <!--more-->
+
 plugins:
   - jekyll-paginate
 
