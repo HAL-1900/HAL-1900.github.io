@@ -160,6 +160,16 @@ article p {
     text-align: justify;
 }
 
+article a {
+    color: var(--link-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+article a:hover {
+    color: var(--link-hover);
+}
+
 .read-more {
     display: inline-block;
     color: var(--link-hover);
